@@ -19,11 +19,11 @@
 
     <section class="pricing-section">
         <div class="pricing">
-            <form action="" class="pricing__form">
+            <form action="js/index.js" class="pricing__form">
                 <div class="pricing__content">
                     <p class="pricing__pageviews"></p>
                     <div class="pricing__pageviews-slider-container">
-                        <input class="slider pricing__pageviews-slider" type="range" name="page-views" id="page-views">
+                        <input class="slider pricing__pageviews-slider" type="range" name="page-views" aria-label="Page views slider" id="page-views">
                     </div>
                     <p class="pricing__price">
                         <span class="pricing__price-value"></span>
@@ -31,7 +31,7 @@
             
                     <div class="pricing__payment">
                         <p class="pricing__payment--monthly">Monthly Billing</p>
-                        <label class="toggle">
+                        <label class="toggle" aria-label="Payments toggle">
                             <input class="toggle__checkbox" type="checkbox">
                             <span class="toggle__slider"></span>
                         </label>
