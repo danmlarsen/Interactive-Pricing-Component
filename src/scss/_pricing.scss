@@ -1,0 +1,172 @@
+@use 'abstract' as *;
+
+.pricing {
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(#000, .1);
+    text-align: center;
+
+    width: 100%;
+    max-width: 35rem;
+
+    @include mq(tablet) {
+        max-width: 54rem;
+    }
+
+    &__content,
+    &__footer {
+        padding: 3.2rem 2.4rem;
+
+        @include mq(tablet) {
+            padding: 3rem 4.8rem;
+        }
+    }
+
+    &__content {
+        display: grid;
+        gap: 2rem;
+        align-items: center;
+
+        @include mq(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 5rem;
+        }
+    }
+
+    &__pageviews {
+        font-size: 1.2rem;
+        font-weight: 800;
+        letter-spacing: 1.71px;
+        text-transform: uppercase;
+
+        @include mq(tablet) {
+            font-size: 1.4rem;
+            text-align: left;
+        }
+    }
+
+    &__pageviews-slider-container {
+        @include mq(tablet) {
+            grid-column: span 2;
+        }
+    }
+
+    &__price {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3.2rem;
+
+        &-value {
+            font-weight: 800;
+            color: var(--primary-text);
+            transition: transform 2s;
+        }
+
+        &::after {
+            content: ' / month';
+            margin-left: .5rem;
+            color: var(--secondary-text);
+            font-size: 1.4rem;
+
+            @include mq(tablet) {
+                font-size: 1.6rem;
+            }
+        }
+
+        @include mq(tablet) {
+            grid-row: 1;
+            grid-column: 2;
+            font-size: 4rem;
+        }
+    }
+
+    &__payment {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+
+        .toggle {
+            margin: 0 1.2rem;
+        }
+
+        &--yearly {
+            position: relative;
+
+            &::after {
+                content: '-25%';
+                position: absolute;
+                top: 0;
+                right: -.5rem;
+                transform: translateX(100%);
+
+                color: var(--discount-text);
+                background-color: var(--discount-background);
+                font-size: 1rem;
+                font-weight: 800;
+                padding: .25rem .5rem;
+                border-radius: 10px;
+                white-space: nowrap;
+
+                @media only screen and (max-width: 22em) {
+                    right: unset;
+                    left: 0;
+                    transform: translateX(50%) translateY(-100%);
+                }
+
+                @include mq(tablet) {
+                    content: '25% discount';
+                    right: -.9rem;
+                }
+            }
+        }
+
+        @include mq(tablet) {
+            grid-column: span 2;
+        }
+    }
+
+    &__footer {
+        border-top: 1px solid var(--empty-slider-bar);
+
+        @include mq(tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+    }
+
+    &__features {
+        list-style: none;
+        margin-bottom: 2rem;
+
+        @include mq(tablet) {
+            text-align: left;
+            margin-bottom: 0;
+        }
+    }
+
+    &__features-item {
+        font-size: 1.2rem;
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            background-image: url('../images/icon-check.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-right: 2rem;
+        }
+    }
+
+    & &__submit {
+        width: 17rem;
+    }
+}

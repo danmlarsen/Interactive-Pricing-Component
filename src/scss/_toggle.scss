@@ -1,0 +1,49 @@
+.toggle {
+    position: relative;
+    display: inline-block;
+    width: 4.3rem;
+    height: 2.2rem;
+
+    &__checkbox {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    &__slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--toggle-background);
+        border-radius: 2.6rem;
+        transition: .4s;
+
+        &::before {
+            content: '';
+            position: absolute;
+            height: 1.4rem;
+            width: 1.4rem;
+            left: .4rem;
+            bottom: .4rem;
+            background: #fff;
+            border-radius: 50%;
+            transition: .4s;
+        }
+
+        &:hover {
+            background-color: var(--full-slider-bar);
+        }
+    }
+
+    &__checkbox:checked + &__slider {
+        background-color: var(--slider-background);
+    }
+
+    &__checkbox:checked + &__slider::before {
+        transform: translateX(2.15rem);
+    }
+
+}
