@@ -41,6 +41,8 @@ input[type='range'] {
         var(--empty-slider-bar) 100%);
     border-radius: 5px;
     cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 
     // transition: all 500ms ease-in;
 

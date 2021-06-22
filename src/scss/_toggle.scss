@@ -4,6 +4,9 @@
     width: 4.3rem;
     height: 2.2rem;
 
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
     &__checkbox {
         opacity: 0;
         width: 0;

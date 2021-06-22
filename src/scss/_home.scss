@@ -30,6 +30,11 @@ body {
     }
 }
 
+::selection {
+    background-color: var(--primary-text);
+    color: var(--main-background);
+}
+
 .btn {
     background-color: var(--primary-text);
     color: var(--cta-text);
